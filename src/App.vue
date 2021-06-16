@@ -36,7 +36,7 @@ export default {
         },
         {
           id: 3,
-          text: 'iron',
+          text: 'iron pills',
           day: 'May 10th at 11am',
           reminder: true,
         },
