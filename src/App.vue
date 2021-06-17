@@ -53,28 +53,19 @@ export default {
         task.id === id ? { ...task, reminder: !task.reminder } : task
       );
     },
+    async fetchTasks() {
+      const res = await fetch("api/tasks");
+      const data = await res.json();
+      return data;
+    },
+    async fetchTask(id) {
+      const res = await fetch(`api/tasks${id}`);
+      const data = await res.json();
+      return data;
+    },
   },
-  created() {
-    this.tasks = [
-      {
-        id: 1,
-        text: "go to sleep before midnight",
-        day: "Everyday",
-        reminder: true,
-      },
-      {
-        id: 2,
-        text: "exercise",
-        day: "today",
-        reminder: false,
-      },
-      {
-        id: 3,
-        text: "take pills",
-        day: "May 10th at 11am",
-        reminder: true,
-      },
-    ];
+  async created() {
+    this.tasks = await this.fetchTasks();
   },
 };
 </script>
