@@ -1,26 +1,25 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <Button @click="onClick()" color="navy" text="Add task" />
+    <Button
+      @toggle-add-task="$emit('toggle-add-task')"
+      color="navy"
+      :text="showAddTask ? 'Close' : 'Add task'"
+    />
   </header>
 </template>
 
 <script>
-import Button from './Button'
+import Button from "./Button";
 
 export default {
   name: "Header",
   props: {
     title: String,
+    showAddTask: Boolean,
   },
   components: {
-      Button 
+    Button,
   },
-  methods:{
-      onClick(){
-          console.log('prdel');
-      }
-  }
 };
-
 </script>
