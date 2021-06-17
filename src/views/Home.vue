@@ -18,13 +18,13 @@ export default {
     Tasks,
     AddTask,
   },
+  props: {
+    showAddTask: Boolean,
+  },
   data() {
     return {
       tasks: [],
     };
-  },
-  props: {
-    showAddTask: Boolean,
   },
   methods: {
     async addTask(task) {
