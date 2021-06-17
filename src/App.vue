@@ -1,6 +1,10 @@
 <template>
   <div class="container">
-    <Header @toggle-add-task="toggleAddTask" title="Task Tracker" :showAddTask="showAddTask"/>
+    <Header
+      @toggle-add-task="toggleAddTask"
+      title="Task Tracker"
+      :showAddTask="showAddTask"
+    />
     <div v-if="showAddTask">
       <AddTask @add-task="addTask" />
     </div>
@@ -35,8 +39,8 @@ export default {
       this.tasks.push(task);
     },
 
-    toggleAddTask(){
-      this.showAddTask = !this.showAddTask
+    toggleAddTask() {
+      this.showAddTask = !this.showAddTask;
     },
 
     deleteTask(id) {
@@ -66,7 +70,7 @@ export default {
       },
       {
         id: 3,
-        text: "iron pills",
+        text: "take pills",
         day: "May 10th at 11am",
         reminder: true,
       },
